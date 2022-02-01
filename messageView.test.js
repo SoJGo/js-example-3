@@ -11,10 +11,19 @@ describe('MessageView', () => {
 
     const view = new MessageView();
 
+    // Modify the first test in messageView.test.js so it sets the HTML input's value to a message of your choice, before clicking on the "show" button. The content of the div#message should be equal to this message.
+
+    const inputEl = document.querySelector('#message-input');
+
+    // We can also set the input's value
+    // (useful in tests, for example)
+    inputEl.value = 'A message of our choice'
+
     const buttonEl = document.querySelector('#show-message-button');
     buttonEl.click();
 
     expect(document.querySelector('#message')).not.toBeNull();
+    expect(document.querySelector('#message').innerText).toBe('A message of our choice'); 
   });
 
   it('clicks the hide button', () => {

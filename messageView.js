@@ -12,13 +12,16 @@ class MessageView {
        this.hideMessage();
     });
 
+    this.inputEl = document.querySelector('#message-input');
+  
+
     this.mainContainerEl = document.querySelector('#main-container');
   }
 
   displayMessage() {
     const div = document.createElement("div"
     );
-    div.innerText = 'Thanks for clicking me!';
+    div.innerText = this.inputEl.value;
     div.id = 'message';
     this.mainContainerEl.append(div);
   }

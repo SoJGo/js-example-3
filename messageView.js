@@ -5,10 +5,26 @@ class MessageView {
     this.buttonEl.addEventListener('click', () => {
        this.displayMessage();
     });
+
+    this.hideButtonEl = document.querySelector('#hide-message-button');
+
+    this.hideButtonEl.addEventListener('click', () => {
+       this.hideMessage();
+    });
+
+    this.mainContainerEl = document.querySelector('#main-container');
   }
 
   displayMessage() {
-    console.log('Thanks for clicking me!');
+    const div = document.createElement("div"
+    );
+    div.innerText = 'Thanks for clicking me!';
+    div.id = 'message';
+    this.mainContainerEl.append(div);
+  }
+
+  hideMessage() {
+    document.querySelector('#message').remove();
   }
 }
 
